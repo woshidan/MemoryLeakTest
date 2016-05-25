@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MemoryReakTest</string>
+    <string name="action_settings">Settings</string>
+    <string name="drawer_open">Open Drawer</string>
+    <string name="drawer_close">Close Drawer</string>
+    <string name="title_activity_static_field_leak">StaticFieldLeakActivity</string>
+    <string name="title_activity_bitmap_field">BitmapFieldActivity</string>
+    <string name="title_activity_long_living_handler">LongLivingHandlerActivity</string>
+    <string name="title_activity_rx_java">RxJavaActivity</string>
+</resources>
