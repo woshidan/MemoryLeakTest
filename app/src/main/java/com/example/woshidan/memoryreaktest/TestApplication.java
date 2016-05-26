@@ -12,17 +12,15 @@ public class TestApplication extends Application {
     @Override public void onCreate() {
         super.onCreate();
         enabledStrictMode();
-        //
         LeakCanary.install(this);
     }
 
     // https://github.com/square/leakcanary/blob/master/leakcanary-sample/src/main/java/com/example/leakcanary/ExampleApplication.java#L34
     private void enabledStrictMode() {
-        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder() //
-                .detectAll() //
-                .penaltyLog() //
-                .penaltyDeath() //
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+                .detectAll()
+                .penaltyLog()
+                .penaltyDeath()
                 .build());
-
     }
 }

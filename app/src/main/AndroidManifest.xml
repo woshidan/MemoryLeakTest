@@ -46,6 +46,14 @@
         <activity
             android:name=".rarely_leak.RxJavaActivity"
             android:label="@string/title_activity_rx_java"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".often_leak.AsyncTaskWithLeakActivity"
+            android:label="@string/title_activity_async_task_with_leak"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+        <activity
+            android:name=".rarely_leak.AsyncTaskWithoutLeakActivity"
+            android:label="@string/title_activity_async_task_without_leak"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

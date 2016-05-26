@@ -11,10 +11,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.woshidan.memoryreaktest.often_leak.StaticFieldLeakActivity;
+import com.example.woshidan.memoryreaktest.often_leak.AsyncTaskWithLeakActivity;
+import com.example.woshidan.memoryreaktest.rarely_leak.AsyncTaskWithoutLeakActivity;
 import com.example.woshidan.memoryreaktest.rarely_leak.BottomSheetActivity;
 import com.example.woshidan.memoryreaktest.rarely_leak.DialogActivity;
 import com.example.woshidan.memoryreaktest.rarely_leak.NavigationViewActivity;
 import com.example.woshidan.memoryreaktest.rarely_leak.RecyclerViewActivity;
+import com.example.woshidan.memoryreaktest.rarely_leak.RxJavaActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -68,6 +71,27 @@ public class MainActivity extends AppCompatActivity {
                 openStaticLeak(v);
             }
         });
+
+        findViewById(R.id.asyncTaskWithLeak).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openAsyncTaskWithLeak(v);
+            }
+        });
+
+        findViewById(R.id.rxJava).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openRxJava(v);
+            }
+        });
+
+        findViewById(R.id.asyncTaskWithoutLeak).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openAsyncTaskWithoutLeak(v);
+            }
+        });
     }
 
     @Override
@@ -101,6 +125,9 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.recyclerView).setOnClickListener(null);
         findViewById(R.id.dialog).setOnClickListener(null);
         findViewById(R.id.staticLeak).setOnClickListener(null);
+        findViewById(R.id.asyncTaskWithLeak).setOnClickListener(null);
+        findViewById(R.id.rxJava).setOnClickListener(null);
+        findViewById(R.id.asyncTaskWithoutLeak).setOnClickListener(null);
 
         super.onDestroy();
     }
@@ -127,6 +154,21 @@ public class MainActivity extends AppCompatActivity {
 
     private void openStaticLeak(View view) {
         Intent intent = new Intent(this, StaticFieldLeakActivity.class);
+        startActivity(intent);
+    }
+
+    private void openAsyncTaskWithLeak(View view) {
+        Intent intent = new Intent(this, AsyncTaskWithLeakActivity.class);
+        startActivity(intent);
+    }
+
+    private void openRxJava(View view) {
+        Intent intent = new Intent(this, RxJavaActivity.class);
+        startActivity(intent);
+    }
+
+    private void openAsyncTaskWithoutLeak(View view) {
+        Intent intent = new Intent(this, AsyncTaskWithoutLeakActivity.class);
         startActivity(intent);
     }
 }

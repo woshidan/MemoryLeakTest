@@ -1,9 +1,12 @@
 package com.example.woshidan.memoryreaktest.rarely_leak;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -86,6 +89,22 @@ public class DialogActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DialogActivity.class);
         intent.putExtra(KEY_COUNT, count + 1);
         startActivity(intent);
+    }
+
+    public static class AlertFragment extends DialogFragment {
+        public AlertFragment() {}
+
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+        }
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            builder.setTitle("Title")
+                    .setMessage("Message");
+            return builder.create();
+        }
     }
 }
 

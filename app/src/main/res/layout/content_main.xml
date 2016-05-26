@@ -47,4 +47,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         />
+    <android.support.v7.widget.AppCompatButton
+        android:layout_below="@id/staticLeak"
+        android:id="@+id/asyncTaskWithLeak"
+        android:text="AsyncTask(Leak)"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <android.support.v7.widget.AppCompatButton
+        android:layout_below="@id/asyncTaskWithLeak"
+        android:id="@+id/rxJava"
+        android:text="RxJava"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <android.support.v7.widget.AppCompatButton
+        android:layout_below="@id/rxJava"
+        android:id="@+id/asyncTaskWithoutLeak"
+        android:text="AsyncTask(NotLeak)"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
 </RelativeLayout>

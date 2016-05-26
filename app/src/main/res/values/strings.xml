@@ -7,4 +7,6 @@
     <string name="title_activity_bitmap_field">BitmapFieldActivity</string>
     <string name="title_activity_long_living_handler">LongLivingHandlerActivity</string>
     <string name="title_activity_rx_java">RxJavaActivity</string>
+    <string name="title_activity_async_task_with_leak">AsyncTaskWithLeakActivity</string>
+    <string name="title_activity_async_task_without_leak">AsyncTaskWithoutLeakActivity</string>
 </resources>
